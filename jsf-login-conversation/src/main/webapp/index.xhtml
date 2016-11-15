@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Login with Conversation Scope</title>
+</h:head>
+<h:body>
+	<h1>Login with Conversation Scope</h1>
+	<h:form>
+		<div>
+			<pre>#{loginController.message}</pre>
+		</div>
+		<div>
+			<label for="usercode">User Code</label>
+			<p:inputText pt:id="usercode" value="#{loginController.info.usercode}" />
+		</div>
+		<div>
+			<label for="password">Password</label>
+			<p:inputMask pt:id="password" value="#{loginController.info.password}" />
+		</div>
+		<p:commandButton value="login" actionListener="#{loginController.logic.start}" action="#{loginController.doLogin}" />
+	</h:form>
+</h:body>
+</html>
